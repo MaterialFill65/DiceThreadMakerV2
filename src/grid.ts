@@ -43,6 +43,7 @@ class Grid {
     private readonly widthInput: HTMLInputElement = document.createElement("input");
     private readonly heightInput: HTMLInputElement = document.createElement("input");
     private readonly ctrlContainer: HTMLDivElement = document.createElement("div");
+    private areNamesVisible: boolean = true;
 
     constructor(screen: HTMLDivElement) {
         this.gridElement.classList.add("grid");
@@ -367,6 +368,13 @@ class Grid {
         this.areNumbersVisible = !this.areNumbersVisible;
         this.cards.forEach(card => {
             card.isNumberVisible = this.areNumbersVisible;
+        });
+    }
+
+    public toggleNameVisibility() {
+        this.areNamesVisible = !this.areNamesVisible;
+        this.cards.forEach(card => {
+            card.isNameVisible = this.areNamesVisible;
         });
     }
 
