@@ -117,7 +117,7 @@ export const PRESETS: CardMetaWithGroup[] = [
         charactor_img: "./normal/rinami.webp",
         size: { x: 1, y: 1 },
         font_size: 50,
-        img_scale: 65,
+        img_scale: 55,
         img_pos: { x: 0, y: 0 },
         group: "ふつう"
     },
