@@ -24,6 +24,7 @@ export class App {
     private readonly gridSettingsContainer: HTMLDivElement = document.createElement("div");
     private readonly clearBackgroundButton: HTMLButtonElement = document.createElement("button");
     private readonly toggleNumberVisibilityButton: HTMLButtonElement = document.createElement("button");
+    private readonly toggleNameVisibilityButton: HTMLButtonElement = document.createElement("button");
     private readonly exportButton: HTMLButtonElement = document.createElement("button");
     groundpicker!: GroundPicker;
     private exportPanel: HTMLDivElement | null = null;
@@ -152,6 +153,10 @@ export class App {
         this.toggleNumberVisibilityButton.addEventListener("click", this.toggleNumberVisibility.bind(this));
         this.gridSettingsContainer.appendChild(this.toggleNumberVisibilityButton);
 
+        this.toggleNameVisibilityButton.textContent = "カードの名前を消す";
+        this.toggleNameVisibilityButton.addEventListener("click", this.toggleNameVisibility.bind(this));
+        this.gridSettingsContainer.appendChild(this.toggleNameVisibilityButton);
+
         this.exportButton.textContent = "画像を保存";
         this.exportButton.addEventListener("click", this.showExportPanel.bind(this));
         this.gridSettingsContainer.appendChild(this.exportButton);
@@ -247,6 +252,15 @@ export class App {
             this.toggleNumberVisibilityButton.textContent = "カードの数字を表示する";
         } else {
             this.toggleNumberVisibilityButton.textContent = "カードの数字を消す";
+        }
+    }
+
+    private toggleNameVisibility() {
+        this.grid.toggleNameVisibility();
+        if (this.toggleNameVisibilityButton.textContent === "カードの名前を消す") {
+            this.toggleNameVisibilityButton.textContent = "カード名前を表示する";
+        } else {
+            this.toggleNameVisibilityButton.textContent = "カードの名前を消す";
         }
     }
 

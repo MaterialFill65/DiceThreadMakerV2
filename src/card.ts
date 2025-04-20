@@ -533,6 +533,13 @@ export default class Card {
     set isNumberVisible(value: boolean) {
         this.numElement.style.display = value ? "block" : "none";
     }
+
+    get isNameVisible() {
+        return this.nameElement.style.display !== "none";
+    }
+    set isNameVisible(value: boolean) {
+        this.nameElement.style.display = value ? "flex" : "none";
+    }
     
 
     destroy() {
