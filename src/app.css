@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.1);
+    touch-action: none;
+    user-select: none;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.dark-theme body {
+    background: rgba(1, 1, 1, 0.9);
+}
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    user-select: none;
+}
+
+#menu-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    user-select: none;
+    touch-action: none;
+}
+
+@media (hover: hover) {
+    #menu-button:hover {
+        opacity: 1;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
+    }
+}
+@media (hover: none) {
+    #menu-button:active {
+        opacity: 1;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
+    }
+}
+
+#menu-panel {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    width: 300px;
+    padding: 10px;
+    z-index: 101;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.preset-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.preset-buttons::after {
+    content: "";
+    display: block;
+    width: 32%;
+}
+
+.preset-buttons button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 50%;
+    border: none;
+}
+
+.dark-theme #menu-panel {
+    background-color: #333;
+    border-color: #555;
+}
+
+.dark-theme #menu-panel button {
+    background-color: #444;
+    color: #eee;
+}
+
+.dark-theme #menu-button {
+    background-color: #444;
+}
+
+.group-buttons-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px;
+    position: relative;
+    margin-bottom: 10px;
+    min-height: 50px;
+}
+
+.group-buttons-container button {
+    flex-shrink: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+.group-selector-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #007bff;
+    transition: transform 0.3s ease, width 0.3s ease;
+    z-index: 1;
+}
+
+.group-buttons-container {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.group-image-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.group-image-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.group-image-button:hover {
+    transform: scale(1.05);
+}
+
+.add-preset-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 32%; 
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin-bottom: 2px;
+    transition: transform 0.2s ease;
+    gap: 5px;
+}
+
+.dark-theme .add-preset-button {
+    color: #333;
+}
+
+.add-preset-button img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.add-preset-button p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.add-preset-button:hover {
+    transform: scale(1.05);
+}
+
+/* Grid Settings Container */
+.grid-settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.grid-background-preview {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    background-size: cover;
+    background-position: center;
+}
+
+.export-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.export-button {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+}
+
+#progress-bar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 0.3s ease-in-out;
+}

@@ -1,0 +1,54 @@
+#screen {
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+    position: relative;
+    touch-action: none;
+}
+
+.grid{
+    position: absolute;
+    transform-origin: top left;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.CtrlButton{
+    position: absolute;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    font-size: 60px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #007bff;
+    user-select: none;
+}
+
+.CtrlInput{
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    font-size: 60px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    padding-right: 0px;
+}
+
+.dark-theme .CtrlInput {
+    background-color: #444;
+    color: white;
+}
+
+.dark-theme .CtrlButton {
+    background-color: #444;
+}
+
+.ctrl-container {
+    position: absolute;
+}
