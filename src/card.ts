@@ -322,6 +322,8 @@ export default class Card {
             const rect = previewContainer.getBoundingClientRect()
             previewPlaceholder.style.height = `${rect.height}px`;
             previewPlaceholder.style.width = `${rect.width}px`;
+            previewPlaceholder.style.minHeight = `${rect.height}px`;
+            previewPlaceholder.style.minWidth = `${rect.width}px`;
             picker.apply_result(previewContainer);
             previewNum.style.display = numberVisibilityCheckbox.checked ? "block" : "none";
             if (imgInput.value === "") {

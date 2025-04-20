@@ -367,7 +367,7 @@ export class App {
                 </div>
             </div>
             <div class="export-preview" style="max-width: 60svw; max-height: 60svh; aspect-ratio: ${gridWidth} / ${gridHeight}; height: ${gridHeight}px">
-                <img id="export-preview-image" src="" alt="プレビュー" style="max-width: 60svw; max-height: 60svh; aspect-ratio: ${gridWidth} / ${gridHeight}; height: ${gridHeight}px"/>
+                <img id="export-preview-image" src="" alt="プレビュー" style="max-width: 60svw; max-height: 60svh; aspect-ratio: ${gridWidth} / ${gridHeight};"/>
             </div>
             <div class="export-buttons">
                 <button id="download-button" class="export-button">保存</button>
